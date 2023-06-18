@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Converter from "@/components/Converter.vue";
+import Converter from '@/components/Converter.vue'
 import './index.scss'
 </script>
 
 <template>
   <div class="container">
-      <Converter />
+    <Converter />
   </div>
 </template>
 
@@ -19,6 +19,6 @@ import './index.scss'
   align-content: center;
   flex-wrap: wrap;
 
-  background-color: blue;
+  background-color: #f2f2f2;
 }
 </style>
