@@ -1,14 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import axios from 'axios'
-
-interface Valute {
-  [key: string]: {
-    Value: string
-    CharCode: string
-    Name: string
-  }
-}
+import type { Valute } from './currencyStore.types'
 
 export const useCurrencyStore = defineStore('currency', {
   state: () => ({
@@ -35,8 +28,8 @@ export const useCurrencyStore = defineStore('currency', {
     convertCurrency() {
       if (this.responseValute !== null) {
         const selectedCurrencyValue = parseFloat(this.responseValute[this.selectedCurrency].Value)
-        const selectedCurrencyAmount = Number(this.selectedCurrencyAmount)
-        this.baseCurrencyAmount = +(selectedCurrencyAmount * selectedCurrencyValue).toFixed(2)
+        const selectedCurrencyAmount = this.selectedCurrencyAmount
+        this.baseCurrencyAmount = (+selectedCurrencyAmount * selectedCurrencyValue).toFixed(2)
         this.saveDataToStorage()
       }
     },
@@ -44,8 +37,8 @@ export const useCurrencyStore = defineStore('currency', {
     convertBaseCurrency() {
       if (this.responseValute !== null) {
         const selectedCurrencyValue = parseFloat(this.responseValute[this.selectedCurrency].Value)
-        const baseCurrencyAmount = Number(this.baseCurrencyAmount)
-        this.selectedCurrencyAmount = +(baseCurrencyAmount / selectedCurrencyValue).toFixed(2)
+        const baseCurrencyAmount = this.baseCurrencyAmount
+        this.selectedCurrencyAmount = (+baseCurrencyAmount / selectedCurrencyValue).toFixed(2)
         this.saveDataToStorage()
       }
     },
