@@ -21,8 +21,7 @@ currencyStore.fetchData()
           v-model="currencyStore.selectedCurrencyAmount"
           placeholder="Введите сумму"
           @input="currencyStore.convertCurrency"
-          n
-          @focus="$event.target.select()"
+          @focus=";($event.target as HTMLInputElement)?.select()"
         />
         <select
           class="converterSelect"
@@ -43,7 +42,7 @@ currencyStore.fetchData()
             class="converterInput"
             v-model="currencyStore.baseCurrencyAmount"
             @input="currencyStore.convertBaseCurrency"
-            @focus="$event.target.select()"
+            @focus=";($event.target as HTMLInputElement)?.select()"
           />
           ₽
         </div>

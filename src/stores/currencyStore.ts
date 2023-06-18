@@ -5,6 +5,8 @@ import axios from 'axios'
 interface Valute {
   [key: string]: {
     Value: string
+    CharCode: string
+    Name: string
   }
 }
 
