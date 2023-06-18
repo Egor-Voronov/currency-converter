@@ -5,7 +5,7 @@
 ```sh
 npm i
 ```
-### to run dev
+### to run dev:
 ```sh
 npm run dev
 ```
