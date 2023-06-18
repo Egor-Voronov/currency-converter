@@ -17,5 +17,8 @@ import './index.scss'
   display: flex;
   justify-content: center;
   align-content: center;
+  flex-wrap: wrap;
+
+  background-color: blue;
 }
 </style>
